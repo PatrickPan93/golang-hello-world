@@ -5,7 +5,6 @@ image:
 before_script:
   - go version
 
-
 stages:
   - test
   - build
@@ -13,12 +12,15 @@ stages:
 
 test:
   stage: test
-  script: echo "test"
+  script: 
+    - echo "test"
 
 build:
   stage: build
-  scrpit: echo "build"
+  scrpit: 
+    - echo "build"
 
 push:
   stage: push
-  script: echo "push"
+  script: 
+    - echo "push"
