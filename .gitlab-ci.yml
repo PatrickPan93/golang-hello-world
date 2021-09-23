@@ -3,7 +3,8 @@ image:
   entrypoint: ["/bin/sh","-c"]
 
 before_scripts:
-  - go version
+  script:
+    - go version
 
 stages:
   - test
