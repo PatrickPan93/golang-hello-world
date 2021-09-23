@@ -1,8 +1,5 @@
 image: golang:1.16-alpine3.14
  
-before_script:
-  - go version
-
 stages:
   - test
   - build
