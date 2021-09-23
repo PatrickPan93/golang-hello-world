@@ -1,5 +1,9 @@
-image: golang:1.16-alpine3.14
- 
+default:
+  image: golang:1.16-alpine3.14
+
+before_scripts:
+  - go version
+
 stages:
   - test
   - build
