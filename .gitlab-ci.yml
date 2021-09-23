@@ -1,25 +1,14 @@
-default:
-  image: golang:1.16-alpine3.14
+image:
+  name: golang:1.16-alpine3.14
+  entrypoint: ["/bin/sh","-c"]
 
 before_scripts:
   - go version
 
 stages:
   - test
-  - build
-  - push
 
 test_job:
   stage: test
   script: 
     - echo "test"
-
-build_job:
-  stage: build
-  scrpit: 
-    - echo "build"
-
-push_job:
-  stage: push
-  script: 
-    - echo "push"
