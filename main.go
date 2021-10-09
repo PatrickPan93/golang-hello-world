@@ -1,21 +1,15 @@
 package main
 
 import (
-
-	"github.com/gin-gonic/gin"
+	"log"
 	"net/http"
 
+	"github.com/gin-gonic/gin"
 )
 
-
-
-func main(){
-
-
+func main() {
 
 	router := gin.Default()
-
-
 
 	router.GET("/", func(c *gin.Context) {
 
@@ -23,7 +17,8 @@ func main(){
 
 	})
 
-	router.Run(":8080")
-
+	if err := router.Run(":8080"); err != nil {
+		log.Println(err.Error())
+	}
 
 }
