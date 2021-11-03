@@ -12,7 +12,7 @@
 
 #CMD [ "/app/app" ]
 
-FROM alpine:3.13.6
+FROM golang:1.16-alpine
 
 
 # 修改alpine源为阿里云
