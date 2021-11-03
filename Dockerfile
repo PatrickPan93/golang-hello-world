@@ -14,7 +14,6 @@
 
 FROM alpine:3.13.6
 
-
 # 修改alpine源为阿里云
 RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.ustc.edu.cn/g' /etc/apk/repositories && \
   apk update && \
@@ -23,10 +22,10 @@ RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.ustc.edu.cn/g' /etc/apk/repositorie
   apk add --update tzdata && \
   rm -rf /var/cache/apk/*
 
-COPY app ./
+COPY app /home/app
 
 ENV TZ=Asia/Shanghai
 
 EXPOSE 8080
 
-CMD ["./app"]
+CMD ["/home/app"]
