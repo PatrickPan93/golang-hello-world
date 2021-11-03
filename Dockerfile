@@ -20,6 +20,8 @@ RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.ustc.edu.cn/g' /etc/apk/repositorie
   apk upgrade && \
   apk add ca-certificates && update-ca-certificates && \
   apk add --update tzdata && \
+  apk add upx && \
+  upx app && \
   rm -rf /var/cache/apk/*
 
 COPY app ./
